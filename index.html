@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Countdown
+		</title>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+			setInterval(function(){
+			var d2 = new Date();
+			var d1 = new Date("2017-06-11 10:00:00");
+			T = Math.floor((d1-d2)/1000)
+			if (T>0) {
+				$("#hours").html((Math.floor(T/3600)).toString()+"<br><span>hour</span>");
+				$("#minutes").html((Math.floor((T%3600)/60)).toString()+"<br><span>minutes</span>");
+				$("#seconds").html((T%60).toString()+"<br><span>seconds</span>");	
+			}
+			else {
+				$('body').html('It\'s <a href="https://results.jeeadv.ac.in/">here</a>');
+			}
+			 }, 1000);
+
+		</script>
+		<style type="text/css">
+			body {
+				background-color: #ecf0f1;
+				color: #2c3e50;
+				text-align: center;
+				padding: 20%;
+				font-size: 5em;
+				font-family: 'Roboto', sans-serif;
+			}
+			div {
+				display: inline-block;
+			}
+			span {
+				font-size: 0.5em;
+			}
+			a {
+				text-decoration: none;
+				color: #3498db;
+			}
+			a:active, a:visited {
+				color: #3498db;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="hours"></div>
+		<div id="minutes"></div>
+		<div id="seconds"></div>
+	</body>
+</html>
